@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio & Digital Assets</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.15rem;
+      max-width: 600px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--text);
+      background: rgba(255,255,255,0.05);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">● Open for Digital Projects</span>
+      <h1>DEIN NAME / HANDLE</h1>
+      <p class="subtitle">
+        Clean Designs, animierte Präsentations-Templates & digitale Assets. 
+        Fokus auf visuelle Effekte, Struktur und moderne Workflows.
+      </p>
+    </header>
+
+    <main>
+      <h2>Projekte & Templates</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="card-tag">PowerPoint Template</span>
+          <h3>Dark Mode Pitch Deck</h3>
+          <p>Animierte Präsentationsvorlage mit flüssigen Morph-Übergängen und modernem Layout.</p>
+          <a href="#" class="btn">Vorschau ansehen</a>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">Motion & Effects</span>
+          <h3>Smooth Morph Pack</h3>
+          <p>Vorgefertigte Folien-Animationen und Zoom-Effekte für schnelle, dynamische Slides.</p>
+          <a href="#" class="btn btn-outline">Bald verfügbar</a>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">Design & Assets</span>
+          <h3>Custom Graphics</h3>
+          <p>Individuelle visuelle Konzepte, Overlays und digitale Design-Bausteine.</p>
+          <a href="#" class="btn btn-outline">Details</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span>© 2026 DEIN NAME</span>
+      <span>Built with GitHub Pages</span>
+    </footer>
+  </div>
+</body>
+</html>
