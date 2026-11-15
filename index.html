@@ -1,193 +1,327 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio & Digital Assets</title>
+  <title>ISOG9 — Visual & Digital</title>
+  <!-- Google Fonts for the bold editorial look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0d1117;
-      --card: #161b22;
-      --border: #30363d;
-      --text: #e6edf3;
-      --muted: #8b949e;
-      --accent: #3b82f6;
-      --accent-hover: #2563eb;
+      --bg: #f4f4f2;
+      --ink: #0f0f0f;
+      --muted: #5a5a5a;
+      --border: #dcdcd8;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 2rem 1rem;
-    }
-
-    .container {
-      max-width: 850px;
+      color: var(--ink);
+      font-family: 'Inter', -apple-system, sans-serif;
+      line-height: 1.5;
+      padding: 2rem clamp(1.2rem, 4vw, 4rem);
+      max-width: 1200px;
       margin: 0 auto;
     }
 
-    header {
-      padding: 3rem 0;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 3rem;
+    /* Top Symbol */
+    .top-mark {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 300;
     }
 
-    .badge {
-      display: inline-block;
-      background: rgba(59, 130, 246, 0.15);
-      color: var(--accent);
-      border: 1px solid rgba(59, 130, 246, 0.3);
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.75rem;
-    }
-
-    .subtitle {
-      color: var(--muted);
-      font-size: 1.15rem;
-      max-width: 600px;
-    }
-
-    h2 {
-      font-size: 1.4rem;
+    /* Massive Editorial Header */
+    .hero-title-wrap {
+      position: relative;
+      text-align: center;
       margin-bottom: 1.5rem;
-      color: var(--text);
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 3.5rem;
+    .hero-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(4.5rem, 15vw, 11.5rem);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--ink);
     }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      border-color: var(--accent);
-    }
-
-    .card-tag {
+    .hero-pill {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--bg);
+      padding: 0.25rem 0.9rem;
+      border-radius: 999px;
       font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      border: 1px solid var(--ink);
+      white-space: nowrap;
+    }
+
+    /* Minimalist Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0 2rem 0;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    nav a {
+      color: var(--ink);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 0.5;
+    }
+
+    /* Hero Visual Banner */
+    .hero-visual {
+      width: 100%;
+      height: clamp(280px, 45vw, 500px);
+      background: linear-gradient(135deg, #1c1c1c 0%, #3a3a3a 50%, #111111 100%);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 4rem;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.5rem;
+    }
+
+    .hero-visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .visual-caption {
+      position: relative;
+      z-index: 2;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Asymmetric Editorial Section */
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      align-items: start;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-heading {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .mini-visual {
+      width: 180px;
+      height: 220px;
+      background: #222;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .mini-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .editorial-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 440px;
+      padding-top: 0.5rem;
+    }
+
+    .editorial-text p {
+      margin-bottom: 1.2rem;
+    }
+
+    /* Stats / Facts Row */
+    .stats-row {
+      display: flex;
+      gap: 3rem;
+      margin-top: 2.5rem;
+    }
+
+    .stat-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: var(--accent);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .card p {
       color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.25rem;
+      margin-top: 0.25rem;
     }
 
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
+    /* Clean Work Grid */
+    .work-section {
+      padding: 4rem 0;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .work-item {
+      background: #eaeae6;
+      aspect-ratio: 4 / 3;
+      border-radius: 4px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: background 0.2s;
+      color: var(--ink);
+      transition: transform 0.25s ease;
     }
 
-    .btn:hover {
-      background: var(--accent-hover);
+    .work-item:hover {
+      transform: translateY(-4px);
     }
 
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
+    .work-meta {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
     }
 
-    .btn-outline:hover {
-      border-color: var(--text);
-      background: rgba(255,255,255,0.05);
+    .work-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
     }
 
     footer {
-      border-top: 1px solid var(--border);
       padding-top: 2rem;
-      color: var(--muted);
-      font-size: 0.9rem;
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 768px) {
+      .editorial-grid {
+        grid-template-columns: 1fr;
+      }
+      nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <span class="badge">● Open for Digital Projects</span>
-      <h1>DEIN NAME / HANDLE</h1>
-      <p class="subtitle">
-        Clean Designs, animierte Präsentations-Templates & digitale Assets. 
-        Fokus auf visuelle Effekte, Struktur und moderne Workflows.
+
+  <div class="top-mark">✳</div>
+
+  <header class="hero-title-wrap">
+    <h1 class="hero-title">ISOG9 STUDIO</h1>
+    <span class="hero-pill">Visual & Digital</span>
+  </header>
+
+  <nav>
+    <a href="#about">Info</a>
+    <a href="#work">Work</a>
+    <a href="#assets">Assets</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero Banner -->
+  <div class="hero-visual">
+    <span class="visual-caption">Selected Works & Visual Concepts — 2026</span>
+  </div>
+
+  <!-- Minimalist Info Section -->
+  <section id="about" class="editorial-grid">
+    <div>
+      <h2 class="section-heading">VISUAL<br>FOCUS</h2>
+      <div class="mini-visual"></div>
+    </div>
+
+    <div class="editorial-text">
+      <p>
+        Focused on clean aesthetics, motion layouts, and digital design systems. 
+        Less noise, more structure.
       </p>
-    </header>
+      <p>
+        From minimalist presentation concepts to custom visual assets — 
+        built for a modern, sleek look.
+      </p>
 
-    <main>
-      <h2>Projekte & Templates</h2>
-      <div class="grid">
-        <div class="card">
-          <span class="card-tag">PowerPoint Template</span>
-          <h3>Dark Mode Pitch Deck</h3>
-          <p>Animierte Präsentationsvorlage mit flüssigen Morph-Übergängen und modernem Layout.</p>
-          <a href="#" class="btn">Vorschau ansehen</a>
+      <div class="stats-row">
+        <div>
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Clean Design</div>
         </div>
-
-        <div class="card">
-          <span class="card-tag">Motion & Effects</span>
-          <h3>Smooth Morph Pack</h3>
-          <p>Vorgefertigte Folien-Animationen und Zoom-Effekte für schnelle, dynamische Slides.</p>
-          <a href="#" class="btn btn-outline">Bald verfügbar</a>
-        </div>
-
-        <div class="card">
-          <span class="card-tag">Design & Assets</span>
-          <h3>Custom Graphics</h3>
-          <p>Individuelle visuelle Konzepte, Overlays und digitale Design-Bausteine.</p>
-          <a href="#" class="btn btn-outline">Details</a>
+        <div>
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">Digital Assets</div>
         </div>
       </div>
-    </main>
+    </div>
+  </section>
 
-    <footer>
-      <span>© 2026 DEIN NAME</span>
-      <span>Built with GitHub Pages</span>
-    </footer>
-  </div>
+  <!-- Project Grid -->
+  <section id="work" class="work-section">
+    <h2 class="section-heading">SELECTED WORK</h2>
+    <div class="work-grid">
+      <a href="#" class="work-item">
+        <span class="work-meta">01 / Motion & Slides</span>
+        <span class="work-title">Editorial Deck</span>
+      </a>
+      <a href="#" class="work-item">
+        <span class="work-meta">02 / Visuals</span>
+        <span class="work-title">Minimal Concepts</span>
+      </a>
+      <a href="#" class="work-item">
+        <span class="work-meta">03 / Archive</span>
+        <span class="work-title">Digital Assets</span>
+      </a>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <span>ISOG9 — 2026</span>
+    <span>Available for Projects</span>
+  </footer>
+
 </body>
 </html>
